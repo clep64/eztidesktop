@@ -1,0 +1,252 @@
+/*
+  body {
+    margin: 0 auto 0 auto;    
+    width: 80vw;
+  }
+  @media only screen and (max-width: 1080px) {
+    body {      
+      width: 100vw;
+    }
+  } 
+*/
+  input {
+    margin-right: 0.5em;
+    font-size: 1em;
+  }
+  
+  #topmenu {
+    background-color: #b3afaf;
+    margin: 0;
+    text-align: center;
+  } 
+  #topmenu p {
+    text-align: center;
+    display: inline-block;
+  } 
+  /*#topbuttonspan {
+    display: inline;
+  } */
+  .topicon {
+    margin-left: 1em;
+    margin-bottom: -0.3em;
+    width: 24px;
+    height: 24px
+  }
+  #topmenu button{
+    display:inline-block;
+    background-color: #056f2e;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 20px;
+    margin-left: 0.5em; 
+  } 
+  
+  #divcol {
+    display: flex;
+    margin:auto;
+    max-width: 800px;
+  }
+  #menuside {
+    flex: 20%;
+    display:none;
+    text-align: right
+  }
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  /*
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 0 0;
+    background-color: #f1f1f1;
+    height: 100%;
+    overflow: auto;
+  }
+  li {
+    padding: 3% 3%;
+  }
+  */
+  ul {
+    list-style-type: none;
+  }
+  #menuside li {
+    padding: 3% 3%;
+  }
+  
+  li button {
+    display: block;
+    background-color: #056f2e;
+    color: white;    
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 20px;     
+    margin-left: auto;
+  }
+  li button:visited {
+    background-color: #0b3cdd;
+    color: white;
+  }
+  /*li button:hover:not(.active) { */
+    li button:hover {
+    background-color: #440303;
+    color: white;
+  }  
+  form button {
+    display: inline-block;
+    background-color: #056f2e;
+    color: white;
+    font-size: 1em;
+    border-radius: 20px;
+    margin-right: 0.5em;    
+  }
+  #divmain {
+    flex: 80%;     
+    margin: 0 auto; 
+    text-align: center;     
+  }
+
+  #divmain label {    
+    display: inline-block;     
+    width:5em;
+  }
+    
+  .classmsg{
+    background-color: #E6E6FA;
+    border-radius: 6px;
+    position: fixed;
+    right: auto;
+    left: 0;
+    top: 30%;  
+    width: auto;
+    height: auto;
+    max-height: 50vh;
+    overflow: auto;
+    box-shadow: rgb(136,136,136) 2px -2px ;
+    padding: 1em;
+    margin: 0 auto; 
+    transform: translate(calc(50vw - 50%)); 
+    z-index: 3;
+  }
+  
+  .boutclose  {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 28px;
+    height: 28px;
+  }
+  #namelist{    
+    font-size: 1em;
+    border: 2px solid black; 
+    
+  }
+  .grptoevent{
+    background-color: #056f2e;
+    color: white;
+  }
+  .grptoevent:hover {
+    background-color: #a0011c;
+    color: white;
+  }
+  #divmain table {
+    border-collapse: collapse;    
+    margin:0.5em auto;
+  }
+  #divmain table tr:nth-child(even){
+    background-color: #f2f2f2;
+  }
+  #divmain table td {
+    border-right: 1px solid black;    
+    border-bottom: 2px solid black;    
+    border-top: 2px solid black; 
+    padding: 0.5em 0.5em; 
+    text-transform: capitalize; 
+    text-align: center;
+  } 
+  #divmain table tr td:first-child {
+    border-left:2px solid black;    
+  }
+  #divmain table tr td:last-child {
+    border-right:2px solid black;    
+  }
+  /*.soustitre {
+    width: 80%;   
+  }*/
+  .bouton {    
+    background-color: #056f2e;
+    color: white;
+    font-size: 1em;
+    border-radius: 20px;
+    margin-right: 0.5em; 
+    margin-left: 0.5em;   
+    
+  }
+  #butok {
+    float:right;
+  }
+  #butno {
+    float:right;
+  }
+  #tabinscrit {
+    margin-top: 1em;
+    font-size: 1em;
+  }
+  .noentry {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .menuderoul {
+    display:none;
+  }
+  .menuderoul li{
+    display: block;
+  }
+  .menuderoulparent:hover {
+    background-color: #440303;
+    color: white;
+  }
+  .menuderoulparent:hover ul{
+    display: block;
+  }
+  .gestionsess {
+    margin-left: 0;
+  }
+/*-----------------------------------------------------------  
+    spinner in css
+*/ 
+.loader{
+  width:15vw;
+  height:15vw;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:50px auto 20px;
+}
+
+@keyframes load7{
+  100%{
+    transform:rotatez(360deg);
+  }
+}
+.loader7::before{
+  content:"";
+  color:white;
+  height:8vw;
+  width:8vW;
+  background:transparent;
+  border-radius:50%;
+  border:15px solid blue;
+  border-color:#0277BD #0277BD #0277BD #81D4FA;
+  animation:load7 .6s infinite ease-in-out;
+  box-shadow:0px 0px 40px -2px skyblue;
+}
+#spintext {
+    font-weight: bold;
+    text-align: center;
+}
+/*----------------------------------------------------------- */   
+  

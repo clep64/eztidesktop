@@ -1,0 +1,13 @@
+.butins, .butmod {
+    background-color: #056f2e;
+}
+#newsessbutton,
+#newcodebutton,
+#deputybutton {
+    display:inline-block;
+    background-color: #056f2e;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 20px;
+    margin-left: 2em; 
+}

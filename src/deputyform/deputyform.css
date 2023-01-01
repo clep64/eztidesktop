@@ -1,0 +1,57 @@
+.deptitre {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.deplicence {
+    font-size: 0.9em;
+    display: inline-block;
+    margin: 3px 0;
+    padding: 3px;
+    width: 6em;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.depnom {
+    font-size: 0.9em;
+    display: inline-block;
+    margin: 3px;
+    width: 12em;    
+}
+
+.depsup {
+    font-size: 0.9em;
+    display: inline;
+    color: white;
+    background-color: #056f2e;
+    margin: 0px;
+    border-radius: 20px;
+}
+
+#depinput {
+    
+    width: 7.8em;
+    margin: 20px 0;
+}
+
+#crbut {
+    font-size: 0.9em;
+    display: inline;
+    color: white;
+    background-color: #056f2e;
+    margin: 25px 10px;
+    text-transform: none;
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.depquit{
+    font-size: 1em;
+    float: right;
+    color: white;
+    background-color: #056f2e;
+    margin: 10px;
+    border-radius: 20px;
+}

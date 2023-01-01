@@ -1,0 +1,49 @@
+
+<!DOCTYPE html >
+<html lang="fr">
+<head> 	
+<title>Pré-inscriptions</title>
+<link rel="shortcut icon" type="image/jpg" href="./assets/images/eztitasuna.ico"/>
+<link rel="stylesheet" href="./assets/stylesheets/menu.css" />
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">		
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">	
+</head>
+<body>
+
+<!--	prepare masterdiv, topmenu and side menu for activities  -->
+
+<div id="masterdiv">
+    <div id="topmenu">
+        <p id="usrconn">Vous n'êtes pas encore identifié</p>
+        <p id=topbuttonspan></p>		
+    </div>
+
+    <!--	Split the screen in 2 columns (menuside and divmain)   -->   
+    <div id="divcol">
+        <a id="finbox"></a>
+
+        <div id="menuside">
+            <h2>Activités</h2>		
+            <ul id=menusideul>				
+            </ul>
+        </div>
+
+        <div id="divmain">
+        </div>
+    </div>	
+</div>
+
+<!--	check the browser. If IE warn it does not work   -->
+<script type="text/javascript">
+    if (/MSIE (\d+\.\d+);/.test(navigator.userAgent) || navigator.userAgent.indexOf("Trident/") > -1 ){ 
+    alert ('ATTENTION !! Ce programme ne fonctionne pas avec Internet Explorer \n Utiliser Edge, Chrome ou Firefox');
+    }
+</script>
+
+<script type="module" src="./main.js"></script> 
+
+</body>
+</html>
+
+
+
