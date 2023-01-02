@@ -56,7 +56,7 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": [],
+      "resources": ["id.json"],
       "shortDescription": "",
       "targets": "all",
       "windows": {
@@ -80,7 +80,7 @@
         "height": 900,
         "resizable": true,
         "title": "eztidesktop",
-        "width": 800
+        "width": 600
       }
     ]
   }

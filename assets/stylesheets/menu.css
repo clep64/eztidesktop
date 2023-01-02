@@ -249,4 +249,11 @@
     text-align: center;
 }
 /*----------------------------------------------------------- */   
-  
+.butidlist {
+  text-align: left;
+  color: white;
+  background-color: #056f2e;
+  width: 20em;
+  margin: 1em 0 1em 5em;
+  padding: 4px
+}  
