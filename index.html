@@ -32,7 +32,16 @@
         </div>
     </div>	
 </div>
-
+<!--	preload global variables usually set by WP   -->
+<script type="text/javascript">
+    //const remoteUrl = 'https://clep.hd.free.fr/coders/wp-content/plugins/ezti-booking/';
+    const remoteUrl = 'https://eztitasuna.fr/wp-content/plugins/ezti-booking/';
+    window.pluginUrl = './';
+    window.phpUrl = `${remoteUrl}php/`;
+    window.configUrl = `${remoteUrl}admin/config.json`;
+    window.wpParm = {programme: 'non', mode: 'desktop'};
+    window.userField = '';
+</script>
 <!--	check the browser. If IE warn it does not work   -->
 <script type="text/javascript">
     if (/MSIE (\d+\.\d+);/.test(navigator.userAgent) || navigator.userAgent.indexOf("Trident/") > -1 ){ 

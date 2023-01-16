@@ -45,7 +45,7 @@ let curSession = {
   inscrit: [],
 };
 
-const userId = { ...window.userFields };
+let userId = { ...window.userFields };
 // id:
 // nom: window.userFields.nom,
 // prenom: window.userFields.prenom,
@@ -62,7 +62,11 @@ const statePage = [];
 export {
   season, today, userId, wpParm, homeUrl, imgUrl, statePage, maxWidth, mediaQuery,
 };
+// ====================================================================================
 
+export function setUserId(userObj) {
+  userId = { ...userObj};
+}
 // ====================================================================================
 
 function getSaison() {

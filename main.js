@@ -2,7 +2,10 @@ import {  msgBox } from './src/commonFunc.js';
 import { fetchGetJson} from './src/fetchFunc.js'; 
 import { readTextFile, writeTextFile, exists  } from '@tauri-apps/api/fs';
 import { resolveResource } from '@tauri-apps/api/path';
-
+import './src/ezti.js';
+import { engine } from './src/engine';
+import { setUserId } from './src/context.js';
+/*
 //const remoteUrl = 'https://clep.hd.free.fr/coders/wp-content/plugins/ezti-booking/';
 const remoteUrl = 'https://eztitasuna.fr/wp-content/plugins/ezti-booking/';
 window.pluginUrl = './';
@@ -10,6 +13,8 @@ window.phpUrl = `${remoteUrl}php/`;
 window.configUrl = `${remoteUrl}admin/config.json`;
 window.wpParm = {programme: 'non', mode: 'desktop'};
 window.userField = '';
+*/
+
 let resourceidjson;
 let idList; 
 
@@ -19,7 +24,7 @@ firstTime();
 //
 async function firstTime() {
   
-//  initialize the first page  
+//  initialize the first page  (LOGIN)
   document.getElementById("usrconn").innerHTML = "Vous n'êtes pas encore identifié";  
   document.getElementById("menuside").style.display = 'none';    
   const divmain = document.getElementById("divmain");
@@ -106,8 +111,9 @@ async function checkinIsOK(userId) {
     msgBox('!!! id not OK !!!'); 
     return false; 
   }
-  window.userFields = {...userField[0]};
-  import('./src/ezti.js');
+  setUserId(userField[0]);
+  // import('./src/ezti.js');
+  engine();
   return true;
 }
 //====================================================================================
@@ -121,13 +127,12 @@ async function formId() {
       if (await checkinIsOK(code)) {
         const found = idList.find(element => element.id === code);  
         if (!found) {
-        const newList = idList.concat([
-          {"id":window.userFields.ffrs, prenom:window.userFields.prenom, nom:window.userFields.nom}
-        ]);
-        storeIdjson(newList);
+          const newList = idList.concat([
+            {"id":window.userFields.ffrs, prenom:window.userFields.prenom, nom:window.userFields.nom}
+          ]);
+          storeIdjson(newList);
         }
       }
-
     }; 
     // add label
     const label = document.createElement('label');
