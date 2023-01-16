@@ -112,7 +112,7 @@ async function checkinIsOK(userId) {
     return false; 
   }
   setUserId(userField[0]);
-  // import('./src/ezti.js');
+  
   engine();
   return true;
 }

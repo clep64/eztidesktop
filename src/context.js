@@ -66,6 +66,7 @@ export {
 
 export function setUserId(userObj) {
   userId = { ...userObj};
+  window.userFields = { ...userObj};
 }
 // ====================================================================================
 
