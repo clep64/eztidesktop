@@ -1,7 +1,7 @@
 import {  msgBox } from './src/commonFunc.js';
 import { fetchGetJson} from './src/fetchFunc.js'; 
 import { readTextFile, writeTextFile, BaseDirectory  } from '@tauri-apps/api/fs';
-import { appDataDir } from '@tauri-apps/api/path';
+import { dataDir } from '@tauri-apps/api/path';
 import './src/ezti.js';
 import { engine } from './src/engine';
 import { setUserId } from './src/context.js';
@@ -23,7 +23,7 @@ firstTime();
 //====================================================================================
 //
 async function firstTime() {
-   const datadir = await appDataDir();
+   const datadir = await dataDir();
 
 //  initialize the first page  (LOGIN)
   document.getElementById("usrconn").innerHTML = "Vous n'êtes pas encore identifié";  
@@ -70,7 +70,7 @@ async function firstTime() {
 async function readIdjson()  {
   let reponse;
   try { 
-    reponse = await readTextFile(fileidjson, {dir:BaseDirectory.AppData});
+    reponse = await readTextFile(fileidjson, {dir:BaseDirectory.Data});
   } catch (e) {
     console.log(e);
     return [];
@@ -85,7 +85,7 @@ async function readIdjson()  {
 //====================================================================================
 async function storeIdjson(data) {  
   try {
-    await writeTextFile(fileidjson, JSON.stringify(data), {dir:BaseDirectory.AppData});    
+    await writeTextFile(fileidjson, JSON.stringify(data), {dir:BaseDirectory.Data});    
   } catch (e) {
     console.log(e);
   }
