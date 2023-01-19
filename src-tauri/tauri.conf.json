@@ -15,7 +15,7 @@
       "fs": {
         "all": true,
         "scope": [
-          "$RESOURCE/*"
+          "$APPDATA/*"
         ]
       },
       "path": {
@@ -56,7 +56,7 @@
         "providerShortName": null,
         "signingIdentity": null
       },
-      "resources": ["id.json"],
+      "resources": [],
       "shortDescription": "",
       "targets": "all",
       "windows": {

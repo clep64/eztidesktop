@@ -1,7 +1,7 @@
 import {  msgBox } from './src/commonFunc.js';
 import { fetchGetJson} from './src/fetchFunc.js'; 
-import { readTextFile, writeTextFile, exists  } from '@tauri-apps/api/fs';
-import { resolveResource } from '@tauri-apps/api/path';
+import { readTextFile, writeTextFile, BaseDirectory  } from '@tauri-apps/api/fs';
+import { appDataDir } from '@tauri-apps/api/path';
 import './src/ezti.js';
 import { engine } from './src/engine';
 import { setUserId } from './src/context.js';
@@ -14,8 +14,7 @@ window.configUrl = `${remoteUrl}admin/config.json`;
 window.wpParm = {programme: 'non', mode: 'desktop'};
 window.userField = '';
 */
-
-let resourceidjson;
+const fileidjson = 'id.json';  
 let idList; 
 
 firstTime();
@@ -23,7 +22,7 @@ firstTime();
 //====================================================================================
 //
 async function firstTime() {
-  
+
 //  initialize the first page  (LOGIN)
   document.getElementById("usrconn").innerHTML = "Vous n'êtes pas encore identifié";  
   document.getElementById("menuside").style.display = 'none';    
@@ -40,7 +39,7 @@ async function firstTime() {
 
   // if users in the id.json file display them 
   // if one of the id is clicked the program continue
-  resourceidjson = await resolveResource('id.json');
+  
   idList = await readIdjson(); 
   if (idList) { 
     crIdButtons(idList);
@@ -68,9 +67,10 @@ async function firstTime() {
 async function readIdjson()  {
   let reponse;
   try { 
-    reponse = await readTextFile(resourceidjson);
+    reponse = await readTextFile(fileidjson, {dir:BaseDirectory.AppData});
   } catch (e) {
     console.log(e);
+    return [];
   }
   if (reponse) {
     return JSON.parse(reponse);
@@ -82,7 +82,7 @@ async function readIdjson()  {
 //====================================================================================
 async function storeIdjson(data) {  
   try {
-    await writeTextFile(resourceidjson, JSON.stringify(data));
+    await writeTextFile(fileidjson, JSON.stringify(data), {dir:BaseDirectory.AppData});    
   } catch (e) {
     console.log(e);
   }
