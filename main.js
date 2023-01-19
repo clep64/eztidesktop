@@ -15,6 +15,7 @@ window.wpParm = {programme: 'non', mode: 'desktop'};
 window.userField = '';
 */
 const fileidjson = 'id.json';  
+
 let idList; 
 
 firstTime();
@@ -22,6 +23,7 @@ firstTime();
 //====================================================================================
 //
 async function firstTime() {
+   const datadir = await appDataDir();
 
 //  initialize the first page  (LOGIN)
   document.getElementById("usrconn").innerHTML = "Vous n'êtes pas encore identifié";  
@@ -33,7 +35,8 @@ async function firstTime() {
   divmain.appendChild(h2);
   
   let p3 = document.createElement("p");
-  p3.innerText = "Pour vous identifier, cliquer un nom dans la liste ou saisir votre identifiant FFRS"; 
+  p3.innerText = datadir;
+  //p3.innerText = "Pour vous identifier, cliquer un nom dans la liste ou saisir votre identifiant FFRS"; 
   p3.className = "maintitle" 
   divmain.appendChild(p3);
 
