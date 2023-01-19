@@ -250,10 +250,19 @@
 }
 /*----------------------------------------------------------- */   
 .butidlist {
+  display: inline-block;
   text-align: left;
   color: white;
   background-color: #056f2e;
-  width: 20em;
-  margin: 1em 0 1em 5em;
+  width: 60%;
+  margin: 0.5em 0 0.5em 5em;
   padding: 4px
 }  
+.butsup { 
+  display: inline-block; 
+  color: white;
+  background-color: #056f2e;
+  width: 3em;
+  margin: 0 0 1em 1em;
+  padding: 4px
+}

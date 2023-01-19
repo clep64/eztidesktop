@@ -89,7 +89,8 @@ async function storeIdjson(data) {
 }
 //====================================================================================
 async function crIdButtons(idList) { 
-  idList.forEach(element => {
+  idList.forEach((element, index) => {
+    const localIdx = index;    
     const but = document.createElement("p");
     but.innerText = `${element.id} ${element.prenom} ${element.nom}`; 
     but.className = "butidlist";
@@ -98,6 +99,17 @@ async function crIdButtons(idList) {
       const isOK = await checkinIsOK(id)      
     });
     divmain.appendChild(but);
+    
+    const sup = document.createElement("p");
+    sup.innerText = 'SUP'; 
+    sup.className = "butsup";    
+    sup.addEventListener('click', async () => {      
+      const newList = [...idList];
+      newList.splice(localIdx, 1);
+      storeIdjson(newList); 
+      firstTime();   
+    });
+    divmain.appendChild(sup);
   }); 
   
 
@@ -111,8 +123,7 @@ async function checkinIsOK(userId) {
     msgBox('!!! id not OK !!!'); 
     return false; 
   }
-  setUserId(userField[0]);
-  
+  setUserId(userField[0]);  
   engine();
   return true;
 }
